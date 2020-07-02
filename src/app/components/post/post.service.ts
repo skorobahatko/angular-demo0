@@ -14,5 +14,8 @@ export class PostService {
   posts(): Observable<any> {
     return this.httpClient.get<Post[]>('https://jsonplaceholder.typicode.com/posts?_limit=50');
   }
+  showDetailsOfPost(id): Observable<any> {
+    return this.httpClient.get<Post[]>(`https://jsonplaceholder.typicode.com/comments?postId=${id}`);
+  }
 
 }
